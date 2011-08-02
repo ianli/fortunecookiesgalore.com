@@ -1,0 +1,89 @@
+body {
+	padding:20px;
+	background-color:#eee;
+	color:#666;
+	-moz-text-shadow:0 1px 0 #fff;
+	-webkit-text-shadow:0 1px 0 #fff;
+	text-shadow:0 1px 0 #fff;
+}
+a, a:hover { 
+	color:#333;
+	text-decoration:none;
+}
+	a:hover {
+		text-decoration:underline;
+	}
+span.pipe {
+	margin:0 5px;
+	color:#999;
+}
+	
+/* Header */
+#hd,
+#nav {
+	font-family:'Arvo',serif;
+}
+	#hd h1 {
+		font-size:22px;
+	}
+#nav {
+	margin:0 0 40px;
+	padding:0;
+	list-style:none;
+}
+	#nav>li {
+		margin-right:20px;
+		float:left;
+		font-size:15px;
+	}
+#bd {}
+	#bd h2 {
+		font-family:'Arvo',serif;
+		font-size:24px;
+		color:#999;
+	}
+	
+/* Fortune */
+#fortune {
+	margin:20px 0 30px;
+	padding:30px 35px;
+	background-color:#fff;
+	border:1px solid #ccc;
+	-moz-box-shadow:3px 3px 0 rgba(0,0,0,0.05);
+	-webkit-box-shadow:3px 3px 0 rgba(0,0,0,0.05);
+	box-shadow:3px 3px 0 rgba(0,0,0,0.05);
+	font-size:32px;
+	line-height:1.25em;
+	color:#000;
+}
+
+/* Facebook */
+#fb-root {
+	display:none;
+}
+
+/* Pagination */
+#fortunes-list {
+	margin:0 0 30px;
+	padding:0;
+	list-style:none;
+}
+	#fortunes-list>li {
+		margin:0 0 1em;
+		font-size:16px;
+	}
+#pagination {
+	font-family:'Arvo',serif;
+	font-size:18px;
+	color:#999;
+}
+	#pagination>._prev {
+		margin-right:20px;
+	}
+	
+/* Footer */
+#ft {
+	padding:5px 0;
+	border-top:1px solid #ccc;
+}
+	
