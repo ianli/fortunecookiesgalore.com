@@ -110,15 +110,14 @@
 						$content = ob_get_contents();
 						ob_end_clean();
 						$raft['content'] = $content;
+						
+						ob_start();
+						include('_layouts/_layout.php');
+						$html = ob_get_contents();
+						ob_end_clean();
+						
+						$html = Minify_HTML::minify($html);
 					}
-					
-					ob_start();
-					include('_layouts/_layout.php');
-					$html = ob_get_contents();
-					ob_end_clean();
-
-					$html = Minify_HTML::minify($html);
-					
 					$filename = $path_info['filename'];
 					file_put_contents("_site/$filename.html", $html);
 				}
@@ -135,6 +134,7 @@
 	generate_fortune_pages($fortunes);
 	generate_fortune_paginations($fortunes);
 	
+	rcopy('robots.txt', '_site/robots.txt');
 	rcopy('google69fca91fe5a019cf.html', '_site/google69fca91fe5a019cf.html');
 	rcopy('css', '_site/css');
 	rcopy('js', '_site/js');
