@@ -1,6 +1,7 @@
 <?php
 	include_once('_php/raft.php');
 	include_once('_php/Minify_HTML.php');
+	include_once('config.php');
 	
 	// Removes files and non-empty directories.
 	// http://www.php.net/manual/en/function.copy.php#104020
