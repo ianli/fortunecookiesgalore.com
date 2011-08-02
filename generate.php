@@ -92,11 +92,46 @@
 		}
 	}
 	
+	function generate_pages($fortunes) {
+		global $raft;
+		
+		$raft['count'] = count($fortunes);
+		
+		$dir = '_pages';
+		if (is_dir($dir)) {
+			$files = scandir($dir);
+			foreach ($files as $file) {
+				if ($file != "." && $file != "..") {
+					$path_info = pathinfo($file);
+					
+					if ($path_info['extension'] == 'php') {
+						ob_start();
+						include("$dir/$file");
+						$content = ob_get_contents();
+						ob_end_clean();
+						$raft['content'] = $content;
+					}
+					
+					ob_start();
+					include('_layouts/_layout.php');
+					$html = ob_get_contents();
+					ob_end_clean();
+
+					$html = Minify_HTML::minify($html);
+					
+					$filename = $path_info['filename'];
+					file_put_contents("_site/$filename.html", $html);
+				}
+			}
+		}
+	}
+	
 	$fortunes = get_fortunes();
 	
 	rrmdir('_site');
 	mkdir('_site');
 	
+	generate_pages($fortunes);
 	generate_fortune_pages($fortunes);
 	generate_fortune_paginations($fortunes);
 	

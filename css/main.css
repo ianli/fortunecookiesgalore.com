@@ -1,6 +1,7 @@
 body {
 	padding:20px;
 	background-color:#eee;
+	font-size:16px;
 	color:#666;
 	-moz-text-shadow:0 1px 0 #fff;
 	-webkit-text-shadow:0 1px 0 #fff;
@@ -40,17 +41,49 @@ span.pipe {
 #bd {
 	margin:0 0 40px;
 }
-	#bd h2 {
+	#bd h2,
+	#bd h3 {
 		font-family:'Arvo',serif;
-		font-size:24px;
 		color:#999;
 	}
+	#bd h2 { font-size:24px; }
+	#bd h3 { font-size:18px; }
 /* Ad */
 #ad {
 	margin:0 0 10px;
 	text-align:center;
 }
-/* Fortune */
+/* Home Page */
+#home {
+	color:#333;
+}
+	#home .large {
+		font-size:24px;
+		line-height:1.3em;
+	}
+	#home a {
+		text-decoration:underline;
+	}
+	#home a.pad {
+		display:block;
+		padding:15px;
+		background-color:#fff;
+		border:1px solid #ccc;
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;
+		border-radius:5px;
+		font-size:20px;
+		text-align:center;
+		text-decoration:none;
+		-moz-box-shadow:3px 3px 0 rgba(0,0,0,0.05);
+		-webkit-box-shadow:3px 3px 0 rgba(0,0,0,0.05);
+		box-shadow:3px 3px 0 rgba(0,0,0,0.05);
+	}
+		#home a.pad:hover {
+			border-color:#999;
+		}
+
+/* Fortune Page */
 #fortune {
 	margin:20px 0 30px;
 	padding:30px 35px;
@@ -67,12 +100,12 @@ span.pipe {
 		margin:0 0 100px;
 	}
 
-/* Facebook */
-#fb-root {
-	display:none;
-}
+	/* Facebook */
+	#fb-root {
+		display:none;
+	}
 
-/* Pagination */
+/* Browse Page */
 #fortunes-list {
 	margin:0 0 30px;
 	padding:0;
@@ -80,7 +113,6 @@ span.pipe {
 }
 	#fortunes-list>li {
 		margin:0 0 1em;
-		font-size:16px;
 	}
 #pagination {
 	font-family:'Arvo',serif;
@@ -95,5 +127,6 @@ span.pipe {
 #ft {
 	padding:5px 0;
 	border-top:1px solid #ccc;
+	font-size:13px;
 }
 	

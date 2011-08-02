@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
-	<title><?= raft('title') ?> / Fortune Cookie Galore!</title>
+	<title><?= raft('title') ?></title>
 	
 	<link rel="stylesheet" href="http://cdn.ianli.com/stylesheets/cw15gw20cc24/screen.css" type="text/css" media="screen, projection, print" />
 	<!--[if lt IE 8]>
@@ -17,9 +17,9 @@
 		<h1><a href="/">Fortune Cookies Galore!</a></h1>
 	</div>
 	<ul id="nav" class="span-24">
+		<li><a href="/">Home</a></li>
 		<li><a href="#" onclick="goRandomly(<?= raft('count') ?>);return false;">Random</a></li>
 		<li><a href="/page1">Browse</a></li>
-		<li><a href="#">About</a></li>
 	</ul>
 	<div id="bd" class="span-24">
 		<?= raft('content') ?>

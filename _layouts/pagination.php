@@ -34,6 +34,6 @@
 	</div>
 <?php end_rafting('content'); ?>
 <?php
-	$raft['title'] = "Page $page";
+	$raft['title'] = "Page $page / Fortune Cookies Galore!";
 	include('_layouts/_layout.php'); 
 ?>

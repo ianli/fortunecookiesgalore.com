@@ -12,6 +12,6 @@
 
 <? end_rafting('content'); ?>
 <?php
-	$raft['title'] = raft('fortune');
+	$raft['title'] = raft('fortune') . ' / Fortune Cookies Galore!';
 	include('_layouts/_layout.php'); 
 ?>
