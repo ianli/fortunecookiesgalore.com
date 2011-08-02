@@ -36,13 +36,19 @@ span.pipe {
 		float:left;
 		font-size:15px;
 	}
-#bd {}
+/* Body */
+#bd {
+	margin:0 0 40px;
+}
 	#bd h2 {
 		font-family:'Arvo',serif;
 		font-size:24px;
 		color:#999;
 	}
-	
+/* Ad */
+#ad {
+	margin:0 0 10px;
+}
 /* Fortune */
 #fortune {
 	margin:20px 0 30px;
