@@ -63,6 +63,9 @@ span.pipe {
 	line-height:1.25em;
 	color:#000;
 }
+	#fortune-share {
+		margin:0 0 100px;
+	}
 
 /* Facebook */
 #fb-root {
