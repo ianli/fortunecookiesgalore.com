@@ -52,11 +52,12 @@
 	function generate_fortune_pages($fortunes) {
 		global $raft;
 		
-		$raft['count'] = $n = count($fortunes);
+		$n = count($fortunes);
 		for ($i = 0; $i < $n; $i++) {
 			$fortune = $fortunes[$i];
 
 			$raft['fortune'] = $fortune;
+			$raft['fortunes_count'] = $n;
 
 			ob_start();
 			include("_layouts/fortune.php");
@@ -65,14 +66,15 @@
 			
 			$html = Minify_HTML::minify($html);
 			
-			file_put_contents("_site/$i.html", $html);
+			$ordinal = $i + 1;
+			file_put_contents("_site/$ordinal.html", $html);
 		}
 	}
 	
 	function generate_fortune_paginations($fortunes) {
 		global $raft;
 		
-		$raft['count'] = $n = count($fortunes);
+		$fortunes_count = count($fortunes);
 		$fortunes_per_page = 100;
 		$page_count = ceil($n / $fortunes_per_page);	
 		
@@ -80,6 +82,8 @@
 			$page = $i + 1;
 			$offset = $i * $fortunes_per_page;
 			$paginated_fortunes = array_slice($fortunes, $offset, $fortunes_per_page);
+			
+			$raft['fortunes_count'] = $fortunes_count;
 			
 			ob_start();
 			include('_layouts/pagination.php');
@@ -95,32 +99,37 @@
 	function generate_pages($fortunes) {
 		global $raft;
 		
-		$raft['count'] = count($fortunes);
+		$raft['fortunes_count'] = count($fortunes);
 		
 		$dir = '_pages';
-		if (is_dir($dir)) {
-			$files = scandir($dir);
-			foreach ($files as $file) {
-				if ($file != "." && $file != "..") {
-					$path_info = pathinfo($file);
-					
-					if ($path_info['extension'] == 'php') {
-						ob_start();
-						include("$dir/$file");
-						$content = ob_get_contents();
-						ob_end_clean();
-						$raft['content'] = $content;
-						
-						ob_start();
-						include('_layouts/_layout.php');
-						$html = ob_get_contents();
-						ob_end_clean();
-						
-						$html = Minify_HTML::minify($html);
-					}
-					$filename = $path_info['filename'];
-					file_put_contents("_site/$filename.html", $html);
-				}
+		
+		if (!is_dir($dir))
+			return;
+		
+		// $dir is a directory, scan it!
+		$files = scandir($dir);
+		foreach ($files as $file) {
+			if ($file == "." || $file == "..")
+				continue;
+				
+			$path_info = pathinfo($file);
+			
+			if ($path_info['extension'] == 'php') {
+				ob_start();
+				include("$dir/$file");
+				$content = ob_get_contents();
+				ob_end_clean();
+				$raft['content'] = $content;
+				
+				ob_start();
+				include('_layouts/_layout.php');
+				$html = ob_get_contents();
+				ob_end_clean();
+				
+				$html = Minify_HTML::minify($html);
+				
+				$filename = $path_info['filename'];
+				file_put_contents("_site/$filename.html", $html);
 			}
 		}
 	}

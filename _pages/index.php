@@ -4,13 +4,13 @@
 
 <div id="home">
 	<p class="large">
-		<b>Fortune Cookies Galore!</b> is a collection of thousands
-		of fortune cookie quotes.
+		<b>Fortune Cookies Galore!</b> 
+		is a collection of <?= raft('fortunes_count'); ?> fortune cookie quotes.
 		Visit to get your daily dose of fortune cookies.
 	</p>
 	
 	<div class="span-8">
-		<a href="#random" class="pad" onclick="goRandomly(<?= raft('count'); ?>);return false;">
+		<a href="/random" class="pad" onclick="goRandomly(<?= raft('fortunes_count') ?>);return false;">
 			Get random fortune cookies.
 		</a>
 	</div>
@@ -20,7 +20,7 @@
 		</a>
 	</div>
 	<div class="span-8 last">
-		<a href="#share" class="pad" onclick="goRandomly(<?= raft('count'); ?>);return false;">
+		<a href="/random" class="pad" onclick="goRandomly(<?= raft('fortunes_count') ?>);return false;">
 			Share fortune cookies with others.
 		</a>
 	</div>

@@ -18,7 +18,7 @@
 	</div>
 	<ul id="nav" class="span-24">
 		<li><a href="/">Home</a></li>
-		<li><a href="#" onclick="goRandomly(<?= raft('count') ?>);return false;">Random</a></li>
+		<li><a href="/random" onclick="goRandomly(<?= raft('fortunes_count') ?>);return false;">Random</a></li>
 		<li><a href="/page1">Browse</a></li>
 	</ul>
 	<div id="bd" class="span-24">
@@ -38,12 +38,17 @@
 	</div>
 	<div id="ft" class="span-24">
 		<a href="/">Fortune Cookies Galore!</a> <span class="pipe">|</span>
-		<a href="#" onclick="goRandomly(<?= raft('count') ?>);return false;">Random</a> <span class="pipe">|</span>
+		<a href="/random" onclick="goRandomly(<?= raft('fortunes_count') ?>);return false;">Random</a> <span class="pipe">|</span>
 		<a href="/page1">Browse</a> <span class="pipe">|</span>
 		&copy; 2011 <a href="http://ianli.com">Ian Li</a>. All rights reserved.
 	</div>
 </div>
 
 <script type="text/javascript" src="/js/main.js"></script>
+<?= raft('js') ?>
 </body>
 </html>
+<?php
+	// Reset $raft.
+	$raft = array();
+?>
