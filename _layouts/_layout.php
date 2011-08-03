@@ -25,7 +25,7 @@
 		<?= raft('content') ?>
 	</div>
 	<div id="ad" class="span-24">
-		<? if (raft('production')) { ?>
+		<? if (PRODUCTION) { ?>
 			<script type="text/javascript">
 			google_ad_client = "ca-pub-8286479041214949";
 			/* Fortune Cookie Galore */
