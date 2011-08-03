@@ -33,7 +33,7 @@
 	function get_fortunes() {
 		$fortunes = array();
 
-		$handle = @fopen('fortunes.csv', 'r');
+		$handle = @fopen('fortunes.txt', 'r');
 		if ($handle) {
 			while (($buffer = fgets($handle)) !== false) {
 				array_push($fortunes, $buffer);
