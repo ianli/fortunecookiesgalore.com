@@ -144,6 +144,7 @@
 	generate_fortune_pages($fortunes);
 	generate_fortune_paginations($fortunes);
 	
+	rcopy('.htaccess', '_site/.htaccess');
 	rcopy('robots.txt', '_site/robots.txt');
 	rcopy('google69fca91fe5a019cf.html', '_site/google69fca91fe5a019cf.html');
 	rcopy('css', '_site/css');
