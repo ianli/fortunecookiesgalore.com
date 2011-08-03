@@ -11,7 +11,7 @@
 	
 	<div class="span-8">
 		<a href="/random" class="pad" onclick="goRandomly(<?= raft('fortunes_count') ?>);return false;">
-			Get random fortune cookies.
+			Get a random fortune cookie.
 		</a>
 	</div>
 	<div class="span-8">

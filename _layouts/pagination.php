@@ -6,9 +6,10 @@
 			for ($j = 0; $j < $_n; $j++) {
 				$fortune = $paginated_fortunes[$j];
 				
-				$fortune_ordinal = $offset + $j;
+				// Fortune ids start with 1.
+				$fortune_id = $offset + $j + 1;
 				
-				echo "<li><a href=\"/$fortune_ordinal\">$fortune</a></li>";
+				echo "<li><a href=\"/$fortune_id\">$fortune</a></li>";
 			}
 		?>
 	</ul>

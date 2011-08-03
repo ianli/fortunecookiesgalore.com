@@ -66,8 +66,9 @@
 			
 			$html = Minify_HTML::minify($html);
 			
-			$ordinal = $i + 1;
-			file_put_contents("_site/$ordinal.html", $html);
+			// Fortune ids start with 1.
+			$fortune_id = $i + 1;
+			file_put_contents("_site/$fortune_id.html", $html);
 		}
 	}
 	
@@ -76,7 +77,7 @@
 		
 		$fortunes_count = count($fortunes);
 		$fortunes_per_page = 100;
-		$page_count = ceil($n / $fortunes_per_page);	
+		$page_count = ceil($fortunes_count / $fortunes_per_page);	
 		
 		for ($i = 0; $i < $page_count; $i++) {
 			$page = $i + 1;
