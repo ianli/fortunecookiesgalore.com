@@ -2,7 +2,7 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^fortunecookiesgalore\.com
 RewriteRule ^(.*)$ http://www.fortunecookiesgalore.com/$1 [R=permanent,L]
 
-RewriteCond %{HTTP_HOST} ^haveafortune\.com
+RewriteCond %{HTTP_HOST} ^(www\.)?haveafortune\.com
 RewriteRule ^(.*)$ http://www.fortunecookiesgalore.com/$1 [R=permanent,L]
 
 RewriteRule ^fortunes/(\d+)$ /$1 [R=permanent,L]
