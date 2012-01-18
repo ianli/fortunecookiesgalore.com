@@ -46,6 +46,9 @@
 
 <script type="text/javascript" src="/js/main.js"></script>
 <?= raft('js') ?>
+
+<script type="text/javascript" src="http://ianli.github.com/sopastrikify/sopastrikify.js"></script>
+
 </body>
 </html>
 <?php
